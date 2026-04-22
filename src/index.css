@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#FAFAFA] text-[#1A1A1A] overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-black/5 shadow-sm;
+  }
+  
+  .bubble {
+    @apply px-6 py-3 rounded-full border border-black/10 font-medium transition-all duration-300 hover:scale-105 active:scale-95 shadow-sm;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#FF8A00] to-[#FF4D00];
+  }
+
+  .btn-primary {
+    @apply px-8 py-4 bg-[#FF8A00] text-white rounded-full font-bold hover:bg-[#E67A00] transition-all duration-300 shadow-xl shadow-orange-500/20 hover:scale-105 active:scale-95;
+  }
+
+  .btn-charcoal {
+    @apply px-8 py-4 bg-[#1A1A1A] text-white rounded-full font-bold hover:bg-black transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  .section-padding {
+    @apply py-24 px-6 max-w-7xl mx-auto;
+  }
+}
+
+.bg-pattern {
+  background-image: radial-gradient(#E5E7EB 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.squiggle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  opacity: 0.05;
+  z-index: 9999;
+  pointer-events: none;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+}
